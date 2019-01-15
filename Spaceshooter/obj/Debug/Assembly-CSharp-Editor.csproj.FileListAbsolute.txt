@@ -1,0 +1,2 @@
+D:\Roll-a-ball\Spaceshooter\obj\Debug\Assembly-CSharp-Editor.csprojAssemblyReference.cache
+D:\Roll-a-ball\Spaceshooter\obj\Debug\Assembly-CSharp-Editor.csproj.CoreCompileInputs.cache
