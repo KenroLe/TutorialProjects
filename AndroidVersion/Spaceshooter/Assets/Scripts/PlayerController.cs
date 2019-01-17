@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
 
     public GameObject controller;
 
-    public float speed;
+    public float maxspeed;
+    public float acceleration;
+
     public float xtilt;
     public Boundary boundary;
 
@@ -37,8 +39,9 @@ public class PlayerController : MonoBehaviour
     {
         Mathf.Clamp(movement.x, -1, 1);
         Mathf.Clamp(movement.y, -1, 1);
-        GetComponent<Rigidbody>().velocity = movement * speed;
-        movement /= 1.05f;
+        GetComponent<Rigidbody>().velocity = movement * acceleration;
+        Mathf.Clamp(movement.x /= 1.2f, -maxspeed, maxspeed);
+        Mathf.Clamp(movement.z /= 1.2f, -maxspeed, maxspeed);
         GetComponent<Rigidbody>().position = new Vector3(
             Mathf.Clamp(GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax),
             0.0f,

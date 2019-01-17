@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour {
     {
         if (restart)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.touchCount > 0)
             {
                 SceneManager.LoadScene(0);
             }
@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour {
             yield return new WaitForSeconds(waveWait);
             if (gameOver)
             {
-                restartText.text = "press 'R' for restart";
+                restartText.text = "touch to restart";
                 restart = true;
                 break;
             }
